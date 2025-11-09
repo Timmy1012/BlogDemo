@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Custom additions
     "corsheaders",
     "rest_framework",
+    'rest_framework_simplejwt',
     "blogdemo"
 ]
 
@@ -131,5 +132,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Allow frontend to access the backend
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    "http://localhost:3000"
 ]
+
+# Define JWT settings
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': True,
+}

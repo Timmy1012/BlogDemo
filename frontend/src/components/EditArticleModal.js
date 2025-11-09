@@ -48,6 +48,7 @@ export default class EditArticleModal extends Component {
                                 value={this.state.activeItem.title}
                                 onChange={this.handleChange}
                                 placeholder="Enter Article Title"
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -59,6 +60,7 @@ export default class EditArticleModal extends Component {
                                 value={this.state.activeItem.content}
                                 onChange={this.handleChange}
                                 placeholder="Enter Article content"
+                                required
                             />
                         </FormGroup>
                     </Form>
