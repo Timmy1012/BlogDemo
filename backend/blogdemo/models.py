@@ -1,11 +1,12 @@
 from django.db import models
+from django.core import validators
 
 class Article(models.Model):
     """Model representing a blog article."""
     id = models.AutoField(primary_key=True)
 
-    title = models.CharField(max_length=200)
-    content = models.TextField()
+    title = models.CharField(max_length=255, validators=[validators.MinLengthValidator(1)])
+    content = models.TextField(validators=[validators.MinLengthValidator(10)])
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
