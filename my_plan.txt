@@ -1,0 +1,6 @@
+1. Create a new django app
+2. Implement models for articles
+3. Define the endpoints, for now unprotected and unfiltered
+4. Write tests
+5. Define the frontend
+6. Add protection and filtering
