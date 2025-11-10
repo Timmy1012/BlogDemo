@@ -24,3 +24,13 @@ kill: ## Stop the project
 	fuser -k 8000/tcp || true
 	# Kill frontend server
 	fuser -k 3000/tcp || true
+
+test-backend: ## Run backend tests
+	cd backend && python3 manage.py test
+
+test-frontend: ## Run frontend tests
+	cd frontend && npm test -- --watchAll=false
+
+test: ## Run all tests
+	$(MAKE) test-backend
+	$(MAKE) test-frontend
