@@ -54,6 +54,23 @@ const Login = () => {
     );
 }
 
+const LogoutButton = () => {
+    const { logout } = useAuth();
+    
+    return (
+        <div className="container-fluid">
+            <div className="d-flex justify-content-end pt-3 pe-3">
+                <button 
+                    className="btn btn-outline-danger" 
+                    onClick={logout}
+                >
+                    Logout
+                </button>
+            </div>
+        </div>
+    );
+};
+
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -107,7 +124,10 @@ export const AuthProvider = ({ children }) => {
             ) : !user ? (
                 <Login />
             ) : (
-                children
+                <div>
+                    <LogoutButton />
+                    {children}
+                </div>
             )}
         </AuthContext.Provider>
     );
