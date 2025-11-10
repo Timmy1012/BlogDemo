@@ -34,3 +34,9 @@ test-frontend: ## Run frontend tests
 test: ## Run all tests
 	$(MAKE) test-backend
 	$(MAKE) test-frontend
+
+docker-start: ## Start the project using docker-compose
+	sudo docker-compose up --build
+
+docker-kill: ## Stop the project using docker-compose
+	sudo docker-compose down
