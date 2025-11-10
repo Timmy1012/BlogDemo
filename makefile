@@ -40,3 +40,11 @@ docker-start: ## Start the project using docker-compose
 
 docker-kill: ## Stop the project using docker-compose
 	sudo docker-compose down
+
+black: ## Run black formatter on backend
+	cd backend && black .
+
+prettier: ## Run prettier on frontend
+	cd frontend && npx prettier --write .
+
+lint: black prettier ## Run linters
