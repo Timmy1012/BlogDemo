@@ -42,7 +42,7 @@ docker-kill: ## Stop the project using docker-compose
 	sudo docker-compose down
 
 black: ## Run black formatter on backend
-	cd backend && black .
+	cd backend && black . --line-length 120
 
 prettier: ## Run prettier on frontend
 	cd frontend && npx prettier --write .

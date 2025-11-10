@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-du+wp76xpf@qo1ib0$yebkehf)&h9yu1d(si^k8p#8*x8!7a$g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', '0.0.0.0']
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "backend", "0.0.0.0"]
 
 
 # Application definition
@@ -37,12 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # Custom additions
     "corsheaders",
     "rest_framework",
-    'rest_framework_simplejwt',
-    "blogdemo"
+    "rest_framework_simplejwt",
+    "blogdemo",
 ]
 
 MIDDLEWARE = [
@@ -53,7 +52,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
     # Custom additions
     "corsheaders.middleware.CorsMiddleware",
 ]
@@ -131,16 +129,13 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Allow frontend to access the backend
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://frontend:3000"
-]
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://frontend:3000"]
 
 # Define JWT settings
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': True,
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
 }

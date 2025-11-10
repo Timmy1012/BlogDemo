@@ -11,7 +11,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
 
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
-    
+
     # Define a PUT method that handles the update action
     def put(self, request, *args, **kwargs):
         """
