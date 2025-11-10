@@ -3,7 +3,6 @@ import { Component } from "react";
 import EditArticleModal from "./components/EditArticleModal";
 import axios from "axios";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -80,7 +79,7 @@ class App extends Component {
   };
 
   createItem = () => {
-    const item = { title: "", description: "", completed: false };
+    const item = { title: "", content: ""};
 
     this.setState({ activeItem: item, modal: !this.state.modal });
   };

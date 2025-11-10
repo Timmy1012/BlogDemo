@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-du+wp76xpf@qo1ib0$yebkehf)&h9yu1d(si^k8p#8*x8!7a$g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', '0.0.0.0']
 
 
 # Application definition
@@ -132,7 +132,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Allow frontend to access the backend
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://frontend:3000"
 ]
 
 # Define JWT settings
