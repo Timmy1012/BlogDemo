@@ -21,25 +21,36 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Username:</label>
-                <input 
-                    type="text" 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)}
-                />
+        <div className="container-fluid vh-100 d-flex justify-content-center align-items-center">
+            <div className="card" style={{width: '400px'}}>
+                <div className="card-body">
+                    <h3 className="card-title text-center mb-4">Login</h3>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label className="form-label">Username:</label>
+                            <input 
+                                type="text" 
+                                className="form-control"
+                                value={username} 
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Password:</label>
+                            <input 
+                                type="password" 
+                                className="form-control"
+                                value={password} 
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
             </div>
-            <div>
-                <label>Password:</label>
-                <input 
-                    type="password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
-            <button type="submit">Login</button>
-        </form>
+        </div>
     );
 }
 
